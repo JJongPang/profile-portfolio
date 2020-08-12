@@ -1,0 +1,17 @@
+'use strict'
+
+//Make Navbar transparent when it is on the top
+const navbar = document.querySelector('#navbar');
+
+// navbar 높이 확인
+const navbarHeight = navbar.getBoundingClientRect().height;
+
+document.addEventListener('scroll', () => {
+    if(window.scrollY > navbarHeight) {
+        navbar.classList.add('navbar--dark');
+    }else {
+        navbar.classList.remove('navbar--dark');
+    }
+});
+
+

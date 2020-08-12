@@ -97,14 +97,21 @@ h1 {
   #navbar {
       display: flex;
       justify-content: space-between;
-      background-color: var(--color-pink);
+      background-color: transparent;
       align-items: center;
+      position: fixed;
       color: var(--color-white);
+      width: 100%;
       padding: 16px;
+      transition: all var(--animation-duration) ease-in;
+  }
+
+  #navbar.navbar--dark {
+    background-color: var(--color-pink);
   }
 
   .navbar__logo img {
-    width: 180px;
+    width: 120px;
     height: auto;
   }
 
@@ -140,12 +147,13 @@ h1 {
     #home {
         background: url(./imges/background-image.png) center/cover no-repeat;
         padding: 40px;
+        padding-top: 150px;
         text-align: center;
     }
 
     .home__avatar {
-        width: 250px;
-        height: 250px;
+        width: 200px;
+        height: 200px;
         border: 2px solid var(--color-light-white);
         border-radius: 50%;
     }

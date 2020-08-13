@@ -64,6 +64,12 @@ workBtnContainer.addEventListener('click', (event) => {
         return;
     }
 
+    //Remove selector
+    const active = document.querySelector('.category__btn.active');
+        active.classList.remove('active');
+    const target = event.target.nodeName === 'BUTTON' ? event.target : event.target.parentNode;
+        target.classList.add('active');
+
     projectContainer.classList.add('ani-out');
 
     setTimeout(() => {

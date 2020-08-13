@@ -1,6 +1,5 @@
 'use strict'
 
-
 const navbar = document.querySelector('#navbar');
 const navbarHeight = navbar.getBoundingClientRect().height; //navbar height check
 
@@ -22,7 +21,14 @@ document.addEventListener('click', (event) => {
     if(link == null) {
         return;
     }
+    navbarMenu.classList.remove('open');
     scrollIntoView(link);
+});
+
+//Navbar drop menu
+const navbarDropMenu = document.querySelector('.navbar__toggle-btn');
+navbarDropMenu.addEventListener('click', () => {
+    navbarMenu.classList.toggle('open');
 });
 
 //Handle click on "contact me" button on home

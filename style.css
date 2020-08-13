@@ -134,7 +134,7 @@ h1 {
         transition: background-color var(--animation-duration) linear;
   }
 
-  .navbar__tggle-btn {
+  .navbar__toggle-btn {
       display: none;
       position: absolute;
       top: 40px;
@@ -397,7 +397,7 @@ h1 {
     }
 
     .project__description h3 {
-        color: var(--color-white);
+        color: var(--color-orange);
     }
 
     .project__description h3:after {
@@ -407,7 +407,7 @@ h1 {
         left: 50%;
         width: 25px;
         height: 2px;
-        margin-left: -12px;
+        transform: translateX(-50%);
         margin-top: 8px;
         background-color: var(--color-dark-white);
     }
@@ -415,8 +415,6 @@ h1 {
     .project.invisible {
         display: none;
     }
-
-  
 
     /* Contact */
     #contact {
@@ -469,12 +467,14 @@ h1 {
     /* For below 768px screen width */
     @media screen and (max-width: 768px) {
         /* Navbar */
-        .navbar__tggle-btn {
+        .navbar__toggle-btn {
             display: block;
         }
+        
         #navbar {
             flex-direction: column;
             align-items: flex-start;
+            background-color: var(--color-pink);
         }
 
         .navbar__menu {
@@ -482,6 +482,10 @@ h1 {
             flex-direction: column;
             text-align: center;
             width: 100%;
+        }
+
+        .navbar__menu.open {
+            display: block;
         }
 
         /* About */

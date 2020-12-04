@@ -58,8 +58,8 @@ document.addEventListener('scroll', () => {
 });
 
 //My work filter
-const workBtnContainer = document.querySelector('.work__categories');
-const projectContainer = document.querySelector('.work__projects');
+const workBtnContainer = document.querySelector('.project__categories');
+const projectContainer = document.querySelector('.project__projects');
 const projects = document.querySelectorAll('.project');
 
 workBtnContainer.addEventListener('click', (event) => {
@@ -91,7 +91,7 @@ workBtnContainer.addEventListener('click', (event) => {
 // 1. 모든 섹션 요소들을 가지고 온다.
 // 2. IntersectionObserver를 이용해서 섹션들을 관찰한다.
 // 3. 보여지는 섹션에 해당하는 메뉴 아이템을 활성화 시킨다.
-const sectionIds = ['#home', '#about', '#skils', '#work', '#contact'];
+const sectionIds = ['#home', '#about', '#skils', '#project', '#contact'];
 
 const sections = sectionIds.map((id) => document.querySelector(id));
 const navItems = sectionIds.map((id) => document.querySelector(`[data-link="${id}"]`));

@@ -101,7 +101,7 @@ p {
     position: fixed;
     color: var(--color-white);
     width: 100%;
-    padding: 16px;
+    padding: 5px;
     transition: all var(--animation-duration) ease-in;
     z-index: 1;
 }
@@ -191,11 +191,18 @@ p {
 }
 
 /* About */
-.about_majors {
+.about__majors {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin: 80px 0;
+}
+
+.major {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .major__icon {
@@ -246,6 +253,7 @@ p {
 }
 
 .job__name,
+.job__position,
 .job__period {
     color: var(--color-light-grey);
 }
@@ -314,7 +322,7 @@ p {
 }
 
 /* Work */
-.work__categories {
+.project__categories {
     margin: 40px;
 }
 
@@ -354,7 +362,7 @@ p {
     transition: all var(--animation-duration) ease-in;
 }
 
-.work__projects {
+.project__projects {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -362,7 +370,7 @@ p {
     transition: all var(--animation-duration) ease-out;
 }
 
-.work__projects.ani-out {
+.project__projects.ani-out {
     opacity: 0;
     transform: scale(0.96) translateY(40px);
 }

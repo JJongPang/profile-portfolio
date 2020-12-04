@@ -22,7 +22,6 @@ document.addEventListener('click', (event) => {
     }
     navbarMenu.classList.remove('open');
     scrollIntoView(link);
-    selectNavItem(target);
 });
 
 //Navbar drop menu
@@ -89,11 +88,6 @@ workBtnContainer.addEventListener('click', (event) => {
     }, 300);
 });
 
-function scrollIntoView(selector) {
-    const scrollTo = document.querySelector(selector);
-    scrollTo.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });
-}
-
 // 1. 모든 섹션 요소들을 가지고 온다.
 // 2. IntersectionObserver를 이용해서 섹션들을 관찰한다.
 // 3. 보여지는 섹션에 해당하는 메뉴 아이템을 활성화 시킨다.
@@ -108,6 +102,12 @@ function selectNavItem(selectes) {
     selectedNavItem.classList.remove('active');
     selectedNavItem = selectes;
     selectedNavItem.classList.add('active');
+}
+
+function scrollIntoView(selector) {
+    const scrollTo = document.querySelector(selector);
+    scrollTo.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });
+    selectNavItem(navItems[sectionIds.indexOf(selector)]);
 }
 
 const observerOptions = {
@@ -136,7 +136,7 @@ sections.forEach((section) => observer.observe(section));
 window.addEventListener('wheel', () => {
     if (window.scrollY === 0) {
         selectedNavIndex = 0;
-    } else if (window.scrollY + window.innerHeight === document.body.clientHeight) {
+    } else if (Math.round(window.scrollY + window.innerHeight) >= document.body.clientHeight) {
         selectedNavIndex = navItems.length - 1;
     }
     selectNavItem(navItems[selectedNavIndex]);

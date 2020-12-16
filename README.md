@@ -26,5 +26,5 @@
 
 <br />
 
-#### DreamLog 영상 소개
+#### 프로젝트 URL
 https://jjongpang.github.io/profile-portfolio/
